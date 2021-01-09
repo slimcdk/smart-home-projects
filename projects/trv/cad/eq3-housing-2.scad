@@ -1,17 +1,17 @@
 
 
 hole_pos = [
-    [3,-48/2-1.2, 18],
+/*    [3,-48/2-1.2, 18],
     [52-0.1,-48/2+4, 25],
     [55,48/2+2.1, 25],
-    [13,48/2+12, 25],
+    [13,48/2+12, 25],*/
 ];
 
 
 *color("gray") gearbox();
 *color("gray") translate([0,44/2,51.5/2+1]) rotate([90-6,0,180]) ttgo();
 
-difference () {
+intersection () {
     union() {
         housing($fn=60);
         rotate([0,90,0]) for (p=hole_pos) translate([-p[0], p[1], -p[2]/2]) difference() {
@@ -25,7 +25,7 @@ difference () {
         translate([0,0,-p[2]]/2) rotate([180,0,0]) linear_extrude(50) circle(d=6.2, $fn=60);
         translate([0,0, -p[2]/2]) linear_extrude(p[2]) circle(d=3.8, $fn=60);
     }
-    *translate([0,-35, -5]) linear_extrude(80) square([30, 80]);
+    translate([0,-35, -5]) linear_extrude(80) square([30, 80]);
 }
 
 
