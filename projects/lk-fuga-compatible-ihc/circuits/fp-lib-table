@@ -1,0 +1,4 @@
+(fp_lib_table
+  (lib (name RF_Module_Local)(type KiCad)(uri ${KIPRJMOD}/RF_Module_Local.pretty)(options "")(descr ""))
+  (lib (name TerminalBlock_WAGO_Local)(type KiCad)(uri ${KIPRJMOD}/TerminalBlock_WAGO_Local.pretty)(options "")(descr ""))
+)
