@@ -1,2 +1,0 @@
-# Cozy RGB table lamp
-

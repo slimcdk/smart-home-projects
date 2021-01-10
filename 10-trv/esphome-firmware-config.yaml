@@ -6,7 +6,7 @@ substitutions:
   node_platform: esp32
   node_board: featheresp32
   
-packages: # files can be found in /firmware-commons
+packages: # files can be found in /02-firmware-commons
   core: !include common/core.yaml 
   basic_sensors: !include common/basic_sensors.yaml
   fonts: !include common/fonts.yaml

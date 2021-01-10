@@ -1,4 +1,6 @@
 # ESP based projects for home automation
 
-ESPHome
-Home Assistant
+
+- ESPHome
+- Tasmota
+- Home Assistant
