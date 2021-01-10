@@ -1,31 +1,47 @@
 
 
+<<<<<<< Updated upstream
 hole_pos = [
 /*    [3,-48/2-1.2, 18],
     [52-0.1,-48/2+4, 25],
     [55,48/2+2.1, 25],
     [13,48/2+12, 25],*/
 ];
+=======
+
+>>>>>>> Stashed changes
 
 
 *color("gray") gearbox();
 *color("gray") translate([0,44/2,51.5/2+1]) rotate([90-6,0,180]) ttgo();
 
+<<<<<<< Updated upstream
 intersection () {
     union() {
+=======
+difference () {
+    difference() {
+>>>>>>> Stashed changes
         housing($fn=60);
-        rotate([0,90,0]) for (p=hole_pos) translate([-p[0], p[1], -p[2]/2]) difference() {
-            linear_extrude(p[2]) circle(d=6.2, $fn=60);
-            linear_extrude(p[2]) circle(d=3.8, $fn=60);
-        }
+        *translate([0,0, 51]) linear_extrude(10) square([100, 100], true);
+        *translate([0,0, 0]) linear_extrude(19) square([100, 100], true);
     }
     
-    rotate([0,90,0]) for (p=hole_pos) translate([-p[0], p[1]]) {
-        translate([0,0,p[2]]/2) linear_extrude(50) circle(d=6.2, $fn=60);
-        translate([0,0,-p[2]]/2) rotate([180,0,0]) linear_extrude(50) circle(d=6.2, $fn=60);
-        translate([0,0, -p[2]/2]) linear_extrude(p[2]) circle(d=3.8, $fn=60);
+    
+    *for (d=[1,-1]) {
+        translate([d*20, 25, 55]) rotate([180,0,0]) {
+            linear_extrude(55) circle(d=3, $fn=30);
+            linear_extrude(2.6) circle(d=6, $fn=30);
+        }
+        translate([d*16, -9, 55]) rotate([180,0,0]) {
+            linear_extrude(25) circle(d=3, $fn=30);
+            linear_extrude(2.6) circle(d=6, $fn=30);
+        }
     }
+<<<<<<< Updated upstream
     translate([0,-35, -5]) linear_extrude(80) square([30, 80]);
+=======
+>>>>>>> Stashed changes
 }
 
 
@@ -35,13 +51,14 @@ intersection () {
 
 module housing() {
     difference() {
-        linear_extrude(55) { //63
+        linear_extrude(55) { // 55
             translate([-(44+4)/2,0]) square([44+4, (44+4)/2+20]);
-            circle(d=44+4);
+            translate([0,-2]) circle(d=44+4);
         }
-        translate([0,0,-2]) rotate([3,0,180]) linear_extrude(60) difference() {
+        *translate([0,0,-2]) rotate([3,0,180]) linear_extrude(60) difference() {
             translate([-48/2,0]) square([48,30]);
             circle(d=48);
+            *translate([0,24]) circle(d=6);
         }
                
         
