@@ -1,61 +1,38 @@
 
 
-<<<<<<< Updated upstream
-hole_pos = [
-/*    [3,-48/2-1.2, 18],
-    [52-0.1,-48/2+4, 25],
-    [55,48/2+2.1, 25],
-    [13,48/2+12, 25],*/
-];
-=======
-
->>>>>>> Stashed changes
-
 
 *color("gray") gearbox();
 *color("gray") translate([0,44/2,51.5/2+1]) rotate([90-6,0,180]) ttgo();
 
-<<<<<<< Updated upstream
-intersection () {
-    union() {
-=======
+
 difference () {
     difference() {
->>>>>>> Stashed changes
         housing($fn=60);
         *translate([0,0, 51]) linear_extrude(10) square([100, 100], true);
         *translate([0,0, 0]) linear_extrude(19) square([100, 100], true);
-    }
-    
-    
-    *for (d=[1,-1]) {
-        translate([d*20, 25, 55]) rotate([180,0,0]) {
-            linear_extrude(55) circle(d=3, $fn=30);
-            linear_extrude(2.6) circle(d=6, $fn=30);
+        
+        // Screw holes
+        for(pos=[[20,25], [-20,25]]) translate(pos) {
+            linear_extrude(50) circle(d=2.9, $fn=30);
+            linear_extrude(2) circle(d=6, $fn=30);
         }
-        translate([d*16, -9, 55]) rotate([180,0,0]) {
-            linear_extrude(25) circle(d=3, $fn=30);
-            linear_extrude(2.6) circle(d=6, $fn=30);
+        translate([0,-23.8, -1]) rotate([0,0]) {
+            linear_extrude(11) circle(d=1.9, $fn=30);
+            linear_extrude(1.6) circle(d=4, $fn=30);
         }
     }
-<<<<<<< Updated upstream
-    translate([0,-35, -5]) linear_extrude(80) square([30, 80]);
-=======
->>>>>>> Stashed changes
+    *translate([0,-35, -5]) linear_extrude(80) square([30, 80]);
+    linear_extrude(4) square([100, 100], true);
 }
-
-
-
-
 
 
 module housing() {
     difference() {
-        linear_extrude(55) { // 55
-            translate([-(44+4)/2,0]) square([44+4, (44+4)/2+20]);
-            translate([0,-2]) circle(d=44+4);
+        linear_extrude(54) { // 55
+            translate([-(44+4)/2,-3]) square([44+4, (44+4)/2+20]);
+            translate([0,-3]) circle(d=44+4);
         }
-        *translate([0,0,-2]) rotate([3,0,180]) linear_extrude(60) difference() {
+        translate([0,-2.6,-3]) rotate([5,0,180]) linear_extrude(60) difference() {
             translate([-48/2,0]) square([48,30]);
             circle(d=48);
             *translate([0,24]) circle(d=6);
@@ -63,7 +40,7 @@ module housing() {
                
         
         // Gearbox cutout
-        linear_extrude(13.5) circle(d=44.2);
+        linear_extrude(13.5) circle(d=45);
         linear_extrude(35) intersection() {
             circle(d=41);
             translate([0,-8]) square([41,41], true);
@@ -83,7 +60,8 @@ module housing() {
         translate([0,44/2,51.5/2+1.5]) rotate([90-6,0,180]) ttgo_cutout();
         translate([-30/2,0]) rotate([90,0,90]) linear_extrude(30) polygon([
             [12.5,13.5],
-            [21,1.5],
+            //[21,1.5],
+            [12.5,1.5],
             [29.8,1.5],
             [29.8-(sin(6)*51),51],
             [0,51],
@@ -93,11 +71,11 @@ module housing() {
         
         
         // Front panel cutout
-        translate([0,35]) rotate([90+6,0,0]) {
+        translate([0,35-2]) rotate([90+6,0,0]) {
             // Display
-            translate([-18/2,19]) {
+            translate([-18/2,19-3]) {
                 linear_extrude(2) square([18.5, 32.5]);
-                linear_extrude(10) square([18.5, 2]);
+                linear_extrude(5) square([18.5, 5]);
             }
             // Buttons
             translate([0,5.2]) {
@@ -109,7 +87,7 @@ module housing() {
         }
         
         // Temp sensor wire cutout
-        translate([14,22.2]) linear_extrude(51) {
+        *translate([14,22.2]) linear_extrude(51) {
             circle(d=4.2);
             rotate([0,0,-35]) translate([0, -3]) square([4.2, 6], true);
         }
