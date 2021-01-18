@@ -1,0 +1,6 @@
+[submodule "utils/cad/gears"]
+	path = utils/cad/gears
+	url = https://github.com/chrisspen/gears
+[submodule "utils/cad/BOSL"]
+	path = utils/cad/BOSL
+	url = https://github.com/revarbat/BOSL.git
