@@ -1,12 +1,12 @@
 
 
 use <settings.scad>;
-use <../../utils/cad/draw-profiles.scad>;
+use <../../../utils/cad/draw-profiles.scad>;
 use <driver-profiles.scad>;
 
 
 //roller_boom_cover_slot(true);
-magnet_circluar_array();
+inside_bar_profile();
 //#circle(d=bearing_19105(D()));
 
 
@@ -54,6 +54,9 @@ module inside_bar_profile(debug=false) {
     
     start_angle = 0 + mouth_angle / 2;
     end_angle = 360 - mouth_angle / 2;
+    
+    echo("roller_bar(R())", roller_bar(R()));
+    echo("roller_bar(r())", roller_bar(r()));
     
     path = [
         

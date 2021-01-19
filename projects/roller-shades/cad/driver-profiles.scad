@@ -1,6 +1,5 @@
-use <../../utils/cad/draw-profiles.scad>;
+use <../../../utils/cad/draw-profiles.scad>;
 use <settings.scad>;
-use <../../utils/cad/draw-profiles.scad>;
 use <common-profiles.scad>;
 
 use <parametricPulley_v3.scad>;

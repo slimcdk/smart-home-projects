@@ -1,4 +1,4 @@
-use <../../utils/cad/draw-profiles.scad>;
+use <../../../utils/cad/draw-profiles.scad>;
 use <settings.scad>;
 use <common-profiles.scad>;
 use <driver-profiles.scad>;

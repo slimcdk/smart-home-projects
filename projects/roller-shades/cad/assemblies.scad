@@ -64,7 +64,7 @@ module driver_assembly() {
     translate(concat(roller_center(), wall(z()))) {
         bearing_19105_mount();
         roller_pulley();
-        *clutch_spine();
+        clutch_spine();
         *translate([0,0,bearing_19105(h())+0.2]) spring_spine_adapter();
         *translate([0,0,0.2]) clutch_spring_pulley();
         *translate([0,0,gt2_belt(w())+1+0.4]) roller_adapter();

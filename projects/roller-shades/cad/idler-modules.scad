@@ -4,7 +4,7 @@ use <settings.scad>;
 use <common-profiles.scad>;
 use <idler-profiles.scad>;
 
-
+!cord_pulley_spine();
 module cord_pulley_spine() {
     linear_extrude(bearing_19105(h())+0.2) difference() {
         circle(d=bearing_19105(d()), $fn=30);
