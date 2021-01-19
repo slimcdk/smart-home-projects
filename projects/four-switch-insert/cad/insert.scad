@@ -5,19 +5,25 @@ use <lk-fuga-utils.scad>;
 assembly_screw_pos = [for(i=[1,-1]) for(ii=[-1,1]) [i*17,ii*15]];
 
 
-*color("white") baseline5050($fn=30);
+color("white") baseline5050($fn=30);
 intersection() {
     insert_body($fn=30);
     *translate([0,0,1.2]) rotate([180,0,0]) linear_extrude(50) square([55,55], true);
 }
-translate([0,0,1.2+1]) front_pcb($fn=30);
-translate([4.5+3,0,0]) rotate([-90,0,90]) /*!projection()*/ back_pcb(parts=false, $fn=30);
+*translate([0,0,1.2+1]) front_pcb($fn=30);
+*translate([4.5+3,0,0]) rotate([-90,0,90]) /*!projection()*/ back_pcb(parts=false, $fn=30);
 
 // Claw screws
 *translate([0,0,2.2+2]) rotate([180,0,0]) {
     translate([38/2,0]) claw_screw($fn=30);
     translate([-38/2,0]) claw_screw($fn=30);
 }
+
+
+// Panels
+*translate([0,50/2-17/2-(50/2-44/2)+0.2,7]) rotate([0,0,90]) new_ihc_tanget($fn=120);
+*translate([0,-50/2+17/2+(50/2-44/2)-0.2,7]) rotate([0,0,90]) new_ihc_tanget($fn=120);
+*translate([0,0,6]) rotate([0,0,90]) slim_cover_bar($fn=120);
 
 
 module insert_body() {
@@ -80,19 +86,12 @@ module insert_body_blob() {
 }
 
 
-module front_pcb() color("green") linear_extrude(1.6) {
-    difference() {
-        front_pcb_profile();
-        
-        // Assembly screw holes
-        *for(p=assembly_screw_pos) translate(p) circle(d=3,$fn=30);
-    } 
-}
+module front_pcb() color("green") !linear_extrude(1.6) front_pcb_profile();
 module front_pcb_profile() difference () {
-    smooth(r=1) square([42.8,42.8], true);
-    for (d=[1,-1]) translate([d*(45/2-7/2),0]) {
-        circle(d=5.6+2);
-        translate([d*3,0]) square([6,5.6+2], true);
+    smooth(r=0.4) square([42.5,42.5], true);
+    for (i=[1,-1]) translate([i*(45/2-7/2),0]) {
+        circle(d=6);
+        translate([i*3-i*0.5,0]) square([6,10], true);
     }
 }
 
