@@ -10,3 +10,6 @@
 [submodule "utils/cad/MCAD"]
 	path = utils/cad/MCAD
 	url = https://github.com/openscad/MCAD.git
+[submodule "utils/cad/NopSCADlib"]
+	path = utils/cad/NopSCADlib
+	url = https://github.com/nophead/NopSCADlib.git
