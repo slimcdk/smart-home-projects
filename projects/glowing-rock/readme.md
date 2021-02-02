@@ -1,2 +1,0 @@
-# Glowing Rock
-
