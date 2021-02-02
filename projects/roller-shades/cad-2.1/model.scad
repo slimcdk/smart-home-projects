@@ -32,7 +32,7 @@ housing_shape();
 //translate([0,0,-1]) base($fn=60);
 //bearing_mount($fn=60);
 main_gear($fn=60);
-//adapter($fn=60);
+!adapter($fn=60);
 //translate([30,0,36.5/2]) rotate([0,-90,0]) motor_gear([for(a=[0:5:280])[cos(a), sin(a)]*(6.2/2)]);
 //motor_mount($fn=60);
 
@@ -168,7 +168,11 @@ module adapter() translate([0, 0, bearing_shim]) {
         
         // stud cutout
         linear_extrude(19) circle(d=13);
-        linear_extrude(30) circle(d=10);
+        
+        // top bearing cutout
+        linear_extrude(30) circle(d=6);
+        translate([0,0,27.8-4]) linear_extrude(4) circle(d=8.1);
+
         
         // bearing cutout
         translate([0,0,19]) {
