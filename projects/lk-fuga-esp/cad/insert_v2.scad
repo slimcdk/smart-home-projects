@@ -1,8 +1,55 @@
 
+// Import libaries
 use <lk-fuga-utils.scad>;
+include <../../../utils/cad/NopSCADlib/lib.scad>;
+
+tactile_sw_positions = [for(i=[1,-1]) for(ii=[1,-1]) [i*27/2, ii*13.7]];
+
+
+assembly_screws
+
+// Frame
+*translate([0,0,-1.2]) baseline5050($fn=30);
+%translate([0,-50/2+17/2+(50/2-44/2)-0.2,6]) rotate([0,0,90]) new_ihc_tanget($fn=60);
+%translate([0,50/2-17/2-(50/2-44/2)+0.2,6]) rotate([0,0,90]) new_ihc_tanget($fn=60);
+%translate([0,0,5.1]) rotate([0,0,90]) slim_cover_bar($fn=60);
+*for (pos=tactile_sw_positions) translate(concat(pos, 2)) square_button(button_6mm);
+
+
+tanget_offset = 27.4/2;
+
+ 
+difference() {
+    union() {
+        linear_extrude(4.4) offset(delta=-0.4) front_profile_taps();
+        linear_extrude(5.4) offset(delta=-0.4) front_profile();
+    }
+    
+    for(i=[1,-1]) translate([0, i*tanget_offset, 0.8]) {
+        for(ii=[1,-1]) {
+            translate([47/2,ii*5.25,2]) linear_extrude(10) square([5.5,3], true);
+            translate([46/2,ii*5.25,2]) linear_extrude(1.6) square([6.5,3], true);
+        }
+        for(ii=[1,-1]) {
+            translate([-47/2,ii*5.25,2]) linear_extrude(10) square([5.5,3], true);
+            translate([-46/2,ii*5.25,2]) linear_extrude(1.6) square([6.5,3], true);
+        }
+    }
+    
+    translate([0,0,1]) linear_extrude(5.4) square([34,40], true);
+    linear_extrude(1) square([34,40]-[2, 2], true);
+}
+
+
+// PCB
+translate([0,0,2-1]) linear_extrude(1) front_pcb_outline();
 
 
 
+translate([0,0,-1]) polygon(squashed_circle_max_radius($fn=60));
+
+
+/*
 assembly_screw_pos = [for(i=[1,-1]) for(ii=[-1,1]) [i*17.5,ii*14]];
 tactile_sw_positions = [for(i=[1,-1]) for(ii=[1,-1]) [i*27/2, ii*13.7]];
 //tangent_hook_cutouts = [for(i=[1,-1]) for(ii=[1,-1]) [i, ii], [i, ii]];
@@ -17,22 +64,28 @@ tactile_sw_positions = [for(i=[1,-1]) for(ii=[1,-1]) [i*27/2, ii*13.7]];
 *for (pos=tactile_sw_positions) translate(concat(pos, 0.6+1)) tactile_sw($fn=30);
 *translate([0,-24/2+42/2,0.6+1]) rotate([0,0,0]) color("black") esp12e();
 
-translate([0,0,0.6]) color("green") front_pcb($fn=30);
+*translate([0,0,0.6]) color("green") front_pcb($fn=30);
 *translate([0,0,-16]) color("green") back_pcb();
 *translate([1,2.2,-15]) rotate([0,0,90]) hilink();
 
-
-insert_body_front_part($fn=30);
+*insert_body_front_part($fn=30);
 *insert_body_front_part_lid($fn=30);
 
-
-
-
 // Claw screws
-translate([0,0,2]) rotate([180,0,0]) {
+*translate([0,0,2]) rotate([180,0,0]) {
     translate([38/2,0]) claw_screw($fn=30);
     translate([-38/2,0]) claw_screw($fn=30);
 }
+*/
+
+module front_pcb_outline() difference() {
+    size=[34,40]-[0.4, 0.4];
+    square(size, true);
+    for(i=[1,-1]) translate([0,i*(size[1]-2)/2]) circle(d=5);
+    for(i=[1,-1]) translate([i*38/2,0]) square([10,10], true);
+}
+
+
 
 
 module insert_body_front_part_lid() {
@@ -56,7 +109,7 @@ module insert_body_front_part() {
     // Front parts
     difference() {
         union() {
-            linear_extrude(4.4) front_profile_knobs();
+            linear_extrude(4.4) front_profile_taps();
             linear_extrude(4.4) front_profile();
         }
         translate([0,0,0.6]) linear_extrude(7) offset(delta=0.4) front_pcb_profile();
@@ -99,10 +152,10 @@ module insert_body_front_part() {
 
 
 
-!claw_cutout();
+//claw_cutout();
 
 module claw_cutout() {
-    for(i=[1,-1]) translate([i*38/2,0, 1]) square([]);
+    for(i=[1,-1]) translate([i*38/2,0, 1]);// square([]);
 }
 
 
