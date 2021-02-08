@@ -1,0 +1,4 @@
+(sym_lib_table
+  (lib (name ESProg)(type Legacy)(uri ${KIPRJMOD}/libs/ESP8266-Template-for-ESProg/ESProg.lib)(options "")(descr ""))
+  (lib (name ESP8266)(type Legacy)(uri ${KIPRJMOD}/libs/kicad-ESP8266/ESP8266.lib)(options "")(descr ""))
+)

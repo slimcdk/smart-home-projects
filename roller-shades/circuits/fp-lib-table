@@ -1,0 +1,5 @@
+(fp_lib_table
+  (lib (name footprints)(type KiCad)(uri ${KIPRJMOD}/libs/ESP8266-Template-for-ESProg/footprints)(options "")(descr ""))
+  (lib (name ESP8266)(type KiCad)(uri ${KIPRJMOD}/libs/kicad-ESP8266/ESP8266.pretty)(options "")(descr ""))
+  (lib (name Connector_USB)(type KiCad)(uri /home/christian/Projects/kicad-footprints/Connector_USB.pretty)(options "")(descr ""))
+)

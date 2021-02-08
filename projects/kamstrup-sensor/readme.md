@@ -1,1 +1,0 @@
-# Kamstrup IR data reader

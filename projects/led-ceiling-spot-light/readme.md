@@ -1,1 +1,0 @@
-# RGBW ceiling spot lights
