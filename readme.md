@@ -1,14 +1,13 @@
 # Smart Home Projects
-This collection of projects aims to minimize costs when building a smart based home. Some projects are alternatives to existing products, often with added or improved features, such as adding local or manual control to devices for redundancy. This ensures control over devices when either electricity, network or third parties fail to work.
+This collection of projects aims to minimize costs when building a smart based home. Some projects are alternatives to existing products, often with added or improved features, such as local or manual control to devices for redundancy. This ensures control over devices when either electricity, network or third parties fail to work.
 
 
 ### What is supported?
-Everything evolves around Home Assistant with the powerful ESPHome firmware powering each device. Both Home Assistant and ESPHome aims for a high quality codebase and guarantees a high reliability aand stability.
-
-However, as all projects are based on Espressifs ESP chips, any compatible firmware, such as Tasmota or custom Arduino code, can be used. This also opens the possibility to use the devices with other smart home projects.
+Everything evolves around Home Assistant with the powerful ESPHome firmware powering each device. Both Home Assistant and ESPHome aims for a high quality codebase and guarantees a high reliability and stability.
+However, as all projects are based on Espressifs ESP chips, any compatible firmware, such as Tasmota or even custom Arduino code, can be used. This also opens the possibility to use the devices with other smart home projects or standalone.
 
 ### Base configurations
-To maximize efficiency is every ESPHome configuration importing a set of common sensors and utilities through the [*packages*](https://esphome.io/guides/configuration-types.html#packages) integration. Base configurations can be found [here](./firmware-commons).
+To maximize efficiency is every ESPHome configuration importing a set of common sensors and utilities through the [*packages*](https://esphome.io/guides/configuration-types.html#packages) integration. Base configurations can be found [here](./utilities/firmware-commons).
 
 
 ### Parts
@@ -20,7 +19,7 @@ Some custom parts used in the projects can be found [here](./parts.md).
 ## [Thermostatic Radiator Valve](./ttgo-eq3-trv)
 Status: *Migrating model to FreeCAD*
 
-Build costs are about €18.
+Build costs is about €18.
 
 
 ## [Motorized Roller Shades](./roller-shades)

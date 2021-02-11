@@ -1,0 +1,47 @@
+binary_sensor:
+  - platform: status
+    name: ${hostname} Status
+    id: ${hostid}_status
+
+
+
+sensor:
+  - platform: uptime
+    name: ${hostname} Uptime
+    id: ${hostid}_uptime
+    update_interval: 15s
+
+  - platform: wifi_signal
+    name: ${hostname} WiFi RSSI
+    id: ${hostid}_wifi_rssi
+    update_interval: 15s
+
+
+
+text_sensor:
+  - platform: version
+    id: ${hostid}_esphome_version
+    name: ${hostname} ESPHome Version
+
+  - platform: wifi_info
+    ip_address:
+      name: ${hostname} IP Address
+      id: ${hostid}_ip_address
+    ssid:
+      name: ${hostname} Connected SSID
+      id: ${hostid}_connected_ssid
+    bssid:
+      name: ${hostname} Connected BSSID
+      id: ${hostid}_connected_bssid
+
+
+
+switch:
+  - platform: restart
+    name: ${hostname} Restart
+    id: ${hostid}_restart
+
+  - platform: shutdown
+    name: ${hostname} Shutdown
+    id: ${hostid}_shutdown
+    
