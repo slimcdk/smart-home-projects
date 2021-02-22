@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name WAGO_2061_602)(type Legacy)(uri /home/christian/Projects/smart-home-projects/utilities/kicad-libs/WAGO_2061_602/WAGO_2061_602.lib)(options "")(descr ""))
+)
