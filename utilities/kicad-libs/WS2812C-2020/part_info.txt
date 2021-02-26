@@ -1,0 +1,9 @@
+Manufacturer=Worldsemi
+PartNumber=WS2812C-2020
+PartCategory=LED
+PackageCategory=Other
+PinCount=4
+Version=1.1
+Released=2019-08-15 17:55:37
+Downloaded=2021-02-26 15:23:45
+3D=Y
