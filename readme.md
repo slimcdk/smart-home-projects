@@ -1,9 +1,9 @@
 # Smart Home Projects
-This collection of projects aims to minimize costs when building a smart based home. Some projects are alternatives to existing products, often with added or improved features, such as local or manual control to devices for redundancy. This ensures control over devices when either electricity, network or third parties fail to work.
+This collection of projects aim to minimize costs and vendor lock in associated with building a smart based home. Some projects are alternatives to existing products, often with added redundancy or improved features, such as local or manual control. This ensures control over devices when either electricity, network or third parties fail and renders your home more useless than traditional homes.
 
 
 ### What is supported?
-Everything evolves around Home Assistant with the powerful ESPHome firmware powering each device. Both Home Assistant and ESPHome aims for a high quality codebase and guarantees a high reliability and stability.
+Everything evolves around Home Assistant with the powerful ESPHome firmware powering each device. Both Home Assistant and ESPHome aims for a high quality codebase and guarantees high reliability and stability.
 However, as all projects are based on Espressifs ESP chips, any compatible firmware, such as Tasmota or even custom Arduino code, can be used. This also opens the possibility to use the devices with other smart home projects or standalone.
 
 ### Base configurations
