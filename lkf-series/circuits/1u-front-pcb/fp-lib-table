@@ -1,0 +1,3 @@
+(fp_lib_table
+  (lib (name SLIMC_LKF_Project)(type KiCad)(uri ${KIPRJMOD}/../../external/KiCad-libs/SLIMC_LKF_Project.pretty)(options "")(descr ""))
+)

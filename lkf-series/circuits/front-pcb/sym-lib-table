@@ -1,3 +1,0 @@
-(sym_lib_table
-  (lib (name WS2812C-2020)(type Legacy)(uri ${KIPRJMOD}/../../../utilities/kicad-libs/WS2812C-2020/WS2812C-2020.lib)(options "")(descr ""))
-)

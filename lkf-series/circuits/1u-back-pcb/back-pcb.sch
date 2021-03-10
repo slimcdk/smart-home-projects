@@ -1,0 +1,194 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title "lkf 4-button insert (back pcb)"
+Date "2021-02-28"
+Rev "v0.0.1"
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Triac_Thyristor:BT136-500 Q1
+U 1 1 5FF8A8D5
+P 4750 3250
+F 0 "Q1" H 4400 3000 50  0000 L CNN
+F 1 "BT136-500" H 4200 2900 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:TO-252-2" H 4950 3175 50  0001 L CIN
+F 3 "http://www.micropik.com/PDF/BT136-600.pdf" H 4750 3250 50  0001 L CNN
+	1    4750 3250
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	4900 3350 5300 3350
+Wire Wire Line
+	5850 3150 5950 3150
+Wire Wire Line
+	5400 4450 4750 4450
+Wire Wire Line
+	4750 3100 4750 3050
+Wire Wire Line
+	4150 4650 4350 4650
+$Comp
+L Device:R R3
+U 1 1 60487F72
+P 6850 3150
+F 0 "R3" V 6600 3250 50  0000 R CNN
+F 1 "430R" V 6700 3250 50  0000 R CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 6780 3150 50  0001 C CNN
+F 3 "~" H 6850 3150 50  0001 C CNN
+	1    6850 3150
+	0    -1   1    0   
+$EndComp
+Wire Wire Line
+	6550 3150 6700 3150
+Wire Wire Line
+	7000 3150 7150 3150
+$Comp
+L power:+3.3V #PWR0101
+U 1 1 600253DA
+P 6500 4200
+F 0 "#PWR0101" H 6500 4050 50  0001 C CNN
+F 1 "+3.3V" H 6515 4373 50  0000 C CNN
+F 2 "" H 6500 4200 50  0001 C CNN
+F 3 "" H 6500 4200 50  0001 C CNN
+	1    6500 4200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R2
+U 1 1 604BA65D
+P 5450 3350
+F 0 "R2" V 5243 3350 50  0000 C CNN
+F 1 "330R" V 5334 3350 50  0000 C CNN
+F 2 "Resistor_SMD:R_1210_3225Metric" V 5380 3350 50  0001 C CNN
+F 3 "~" H 5450 3350 50  0001 C CNN
+	1    5450 3350
+	0    -1   1    0   
+$EndComp
+Connection ~ 4750 3050
+Wire Wire Line
+	4150 4550 4750 4550
+Wire Wire Line
+	4750 4550 4750 4450
+Connection ~ 4750 4450
+Wire Wire Line
+	4150 3050 4750 3050
+Wire Wire Line
+	4150 3150 4350 3150
+Connection ~ 4350 4650
+Wire Wire Line
+	4350 4650 5400 4650
+$Comp
+L Converter_ACDC:IRM-02-3.3S PS1
+U 1 1 603368FD
+P 5800 4550
+F 0 "PS1" H 5800 4875 50  0000 C CNN
+F 1 "IRM-02-3.3S" H 5800 4784 50  0000 C CNN
+F 2 "Converter_ACDC:Converter_ACDC_MeanWell_IRM-02-xx_SMD" H 5800 4250 50  0001 C CNN
+F 3 "https://www.meanwell.com/Upload/PDF/IRM-02/IRM-02-SPEC.PDF" H 5800 4550 50  0001 C CNN
+	1    5800 4550
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x03 J3
+U 1 1 6033B87E
+P 7950 3800
+F 0 "J3" H 8350 3750 50  0000 C CNN
+F 1 "Inter_PCB_Conn" H 8400 3850 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" H 7950 3800 50  0001 C CNN
+F 3 "~" H 7950 3800 50  0001 C CNN
+	1    7950 3800
+	1    0    0    1   
+$EndComp
+Wire Wire Line
+	6500 4900 6500 4650
+$Comp
+L power:GND #PWR0102
+U 1 1 600244F5
+P 6500 4900
+F 0 "#PWR0102" H 6500 4650 50  0001 C CNN
+F 1 "GND" H 6505 4727 50  0000 C CNN
+F 2 "" H 6500 4900 50  0001 C CNN
+F 3 "" H 6500 4900 50  0001 C CNN
+	1    6500 4900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7150 3800 7150 3150
+Wire Wire Line
+	7050 3900 7050 4650
+Wire Wire Line
+	6500 4200 6500 4450
+Wire Wire Line
+	6200 4450 6500 4450
+Wire Wire Line
+	6200 4650 6500 4650
+Wire Wire Line
+	7050 3350 7050 3900
+Wire Wire Line
+	6550 3350 7050 3350
+Connection ~ 7050 3900
+Connection ~ 6500 4650
+Wire Wire Line
+	6500 4650 7050 4650
+Wire Wire Line
+	7050 3900 7750 3900
+Connection ~ 6500 4450
+Wire Wire Line
+	6500 4450 6950 4450
+Wire Wire Line
+	5600 3350 5950 3350
+Wire Wire Line
+	4750 3050 5850 3050
+Wire Wire Line
+	5850 3050 5850 3150
+Wire Wire Line
+	4350 3150 4350 4650
+Wire Wire Line
+	4750 3400 4750 4450
+$Comp
+L Connector_Generic:Conn_01x02 J2
+U 1 1 603E8E83
+P 3950 4550
+F 0 "J2" H 4450 4450 50  0000 C CNN
+F 1 "Mains_In_Conn" H 4450 4550 50  0000 C CNN
+F 2 "WAGO_2061_602:2061-602_998-404" H 3950 4550 50  0001 C CNN
+F 3 "~" H 3950 4550 50  0001 C CNN
+	1    3950 4550
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x02 J1
+U 1 1 603ED863
+P 3950 3150
+F 0 "J1" H 4450 3050 50  0000 C CNN
+F 1 "Mains_Out_Conn" H 4450 3150 50  0000 C CNN
+F 2 "WAGO_2061_602:2061-602_998-404" H 3950 3150 50  0001 C CNN
+F 3 "~" H 3950 3150 50  0001 C CNN
+	1    3950 3150
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	7150 3800 7750 3800
+Wire Wire Line
+	7750 3700 6950 3700
+Wire Wire Line
+	6950 3700 6950 4450
+$Comp
+L Relay_SolidState:MOC3021M U2
+U 1 1 603BCC49
+P 6250 3250
+F 0 "U2" H 6250 3575 50  0000 C CNN
+F 1 "MOC3021M" H 6250 3484 50  0000 C CNN
+F 2 "Package_DIP:DIP-6_W7.62mm_SMDSocket_SmallPads" H 6050 3050 50  0001 L CIN
+F 3 "https://www.onsemi.com/pub/Collateral/MOC3023M-D.PDF" H 6250 3250 50  0001 L CNN
+	1    6250 3250
+	-1   0    0    -1  
+$EndComp
+$EndSCHEMATC
