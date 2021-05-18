@@ -1,4 +1,4 @@
-# Motorized Roller Shades
+# Smart Mirror (MagicMirror)
 
 
 

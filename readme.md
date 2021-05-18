@@ -28,7 +28,7 @@ Status: *Cleaning up project repository*
 Status: *Cleaning up project repository*
 
 
-## [Halo Clock Light](./halo-light)
+## [Halo Clock Light](./halo-clock)
 Status: *Cleaning up project repository*
 
 
