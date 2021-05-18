@@ -1,10 +1,11 @@
 # Halo Clock Light
 
-### " Levitating" wall mounted ring light which can function as a clock.
+### Floating wall mounted ring light which can function as a clock.
 
-<img src="static/images/image1.jpg" style="width: 49%; height: 600px; object-fit: cover; object-position: 0 35%;">
+<!--img src="static/images/image1.jpg" style="width: 49%; height: 600px; object-fit: cover; object-position: 0 35%;"-->
 <img src="static/images/image2.jpg" style="width: 49%; height: 600px; object-fit: cover; object-position: 0 50%;">
 
+[More images](static/images)
 
 ---
 ## Parts list
