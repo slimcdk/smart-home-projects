@@ -1,0 +1,47 @@
+substitutions:
+  hostid: halo_clock
+  hostname: Halo Clock
+  comment: Main clock in the living room
+  node_platform: esp8266
+  node_board: d1_mini
+  
+
+packages:
+  core: !include common/core.yaml # https://github.com/slimcdk/home-server/blob/master/services/esphome/common/core.yaml
+  basic_sensors: !include common/basic_sensors.yaml # https://github.com/slimcdk/home-server/blob/master/services/esphome/common/basic_sensors.yaml
+  
+  
+light:
+  - platform: neopixelbus
+    id: ${hostid}_inner_light_ring
+    name: ${hostname} Inner Ring
+    variant: SK6812
+    type: GRBW
+    method: ESP8266_UART1
+    num_leds: 70
+    pin: GPIO2
+    effects:
+      !include common/addressable_light_effects.yaml # https://github.com/slimcdk/home-server/blob/master/services/esphome/common/addressable_light_effects.yaml
+ 
+  - platform: neopixelbus
+    id: ${hostid}_outer_light_ring
+    name: ${hostname} Outer Ring
+    variant: SK6812
+    type: GRBW
+    method: ESP8266_DMA
+    num_leds: 64
+    pin: GPIO3
+    effects:
+      !include common/addressable_light_effects.yaml # https://github.com/slimcdk/home-server/blob/master/services/esphome/common/addressable_light_effects.yaml
+ 
+  - platform: partition
+    name: ${hostname}
+    segments:
+      - id: ${hostid}_inner_light_ring
+        from: 0
+        to: 64
+      - id: ${hostid}_outer_light_ring
+        from: 0
+        to: 70
+    effects:
+      !include common/addressable_light_effects.yaml # https://github.com/slimcdk/home-server/blob/master/services/esphome/common/addressable_light_effects.yaml
