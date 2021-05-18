@@ -1,0 +1,11 @@
+substitutions:
+  hostid: 
+  hostname: 
+  comment: 
+  node_platform: 
+  node_board: 
+
+
+packages:
+  core: !include common/core.yaml # https://github.com/slimcdk/home-server/blob/master/services/esphome/common/core.yaml
+  basic_sensors: !include common/basic_sensors.yaml # https://github.com/slimcdk/home-server/blob/master/services/esphome/common/basic_sensors.yaml

@@ -1,9 +1,16 @@
-# Roller shades
+# Smart Mirror
 
 
-### Research
 
-## Two way overrunning clutch 
+---
+### Parts list
+#### Assembly parts list
 
-https://mechamechanisms.com/two-way-overrunning-clutch-2
-https://www.youtube.com/watch?v=VgciAZMn7Zc
+
+
+#### Setup parts lists
+
+
+
+---
+### Assembly guide

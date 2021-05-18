@@ -1,19 +1,18 @@
+
 substitutions:
-  devicename: office_window
-  upper_devicename: Office Window
-
-
-<<: !include settings/default_config.yaml
-wifi:
-  <<: !include settings/wifi.yaml
-  use_address: ${devicename}.local
-
+  hostid: office_window
+  hostname: Office Window
+  comment: Window sensor and roller blinds controller
+  node_platform: ESP8266
+  node_board: d1_mini
+    
+  
+packages:
+  core: !include common/core.yaml # https://github.com/slimcdk/home-server/blob/master/services/esphome/common/core.yaml
+  basic_sensors: !include common/basic_sensors.yaml # https://github.com/slimcdk/home-server/blob/master/services/esphome/common/basic_sensors.yaml
+    
 
 esphome:
-  <<: !include settings/core.yaml
-  platform: ESP8266
-  board: d1_mini
-  comment: Window sensor and roller blinds controller
   on_boot:
     then:
       - lambda: 'id(cover_stepper).set_target( -id(current_cover_position) );'

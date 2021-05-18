@@ -1,0 +1,38 @@
+substitutions:
+  hostid: kitchen_tablet_mount
+  hostname: Kitchen Tablet Mount
+  comment: Kitchen Tablet Mount
+  node_platform: esp8266
+  node_board: d1_mini
+  
+  
+packages:
+  core: !include common/core.yaml # https://github.com/slimcdk/home-server/blob/master/services/esphome/common/core.yaml
+  basic_sensors: !include common/basic_sensors.yaml # https://github.com/slimcdk/home-server/blob/master/services/esphome/common/basic_sensors.yaml
+  
+
+esphome:
+  on_boot:
+    priority: 700
+    then:
+      switch.turn_on: ${hostid}_charge_tablet
+
+
+light:
+  - platform: neopixelbus
+    id: ${hostid}
+    name: ${hostname}
+    variant: WS2812
+    type: GRB
+    method: ESP8266_DMA
+    num_leds: 14
+    pin: GPIO3
+    effects:
+      !include common/addressable_light_effects.yaml # https://github.com/slimcdk/home-server/blob/master/services/esphome/common/addressable_light_effects.yaml
+
+
+switch:
+  - platform: gpio
+    pin: GPIO4
+    id: ${hostid}_charge_tablet
+    name: ${hostname} Charge Tablet

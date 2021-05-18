@@ -7,51 +7,47 @@ Everything evolves around Home Assistant with the powerful ESPHome firmware powe
 However, as all projects are based on Espressifs ESP chips, any compatible firmware, such as Tasmota or even custom Arduino code, can be used. This also opens the possibility to use the devices with other smart home projects or standalone.
 
 ### Base configurations
-To maximize efficiency is every ESPHome configuration importing a set of common sensors and utilities through the [*packages*](https://esphome.io/guides/configuration-types.html#packages) integration. Base configurations can be found [here](./utilities/firmware-commons).
+To maximize efficiency is every ESPHome configuration importing a set of common sensors and utilities through the [*packages*](https://esphome.io/guides/configuration-types.html#packages) integration. Base configurations can be found [here](https://github.com/slimcdk/home-server/blob/master/services/esphome/common).
 
 
-### Parts
-Some custom parts used in the projects can be found [here](./parts.md).
 
 ---
 ## Projects
 
-## [Thermostatic Radiator Valve](./ttgo-eq3-trv)
+## [Thermostatic Radiator Valve](./trv)
 Status: *Migrating model to FreeCAD*
 
 Build costs is about €18.
+
+
+## [Tablet Wall Mount](./tablet-wall-mount)
+Status: *Cleaning up project repository*
+
+
+## [Aurora Portable Light Pole](./aurora)
+Status: *Cleaning up project repository*
+
+
+## [Halo Clock Light](./halo-light)
+Status: *Cleaning up project repository*
 
 
 ## [Motorized Roller Shades](./roller-shades)
 Status: *Working on hardware for position feedback*
 
 
-## [LK Fuga Compatible Insert](./lkf-insert)
+## [LK Fuga Compatible Insert](./lkf-series)
 Status: *Working on designing base*
 
-## [Aurora](./aurora)
-Status: *Migrating model to FreeCAD*
 
-
-
-## [Smart mirror (MagicMirror) ](./wemos-d1-pd-shield)
+## [Smart mirror (MagicMirror) ](./smart-mirror)
 Status: *Working on model in FreeCAD*
-
 
 
 ## [Envriomental Sensor](./environmental-sensor)
 Status: *Migrating model to FreeCAD*
 
 
-
-## [USB-C Power Delivery Shield for Wemos D1](./wemos-d1-pd-shield)
-Status: *Finalizing schematic*
-
-
-
-## [Water Bottle Holder](./cage-pets-water-bottle-mount)
-Status: *Migrating model to FreeCAD*
-
-
-## [Build on Ceiling Lights]()
+## [Build on Ceiling Lights](./ceiling-spot)
 Status: *On the drawing board*
+

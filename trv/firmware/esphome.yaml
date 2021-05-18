@@ -7,9 +7,9 @@ substitutions:
   node_board: featheresp32
   
 packages:
-  core: !include common/core.yaml 
-  basic_sensors: !include common/basic_sensors.yaml
-  fonts: !include common/fonts.yaml
+  core: !include common/core.yaml # https://github.com/slimcdk/home-server/blob/master/services/esphome/common/core.yaml
+  basic_sensors: !include common/basic_sensors.yaml # https://github.com/slimcdk/home-server/blob/master/services/esphome/common/basic_sensors.yaml
+  fonts: !include common/fonts.yaml # https://github.com/slimcdk/home-server/blob/master/services/esphome/common/fonts.yaml
 
 
 esphome:

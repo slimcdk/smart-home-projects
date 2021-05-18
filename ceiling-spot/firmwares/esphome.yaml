@@ -1,10 +1,15 @@
+substitutions:
+  hostid: 
+  hostname: 
+  comment: 
+  node_platform: 
+  node_board: 
+  
 
-esphome:
-  name: esp-spot-light
-  platform: ESP32
-  board: <BOARD_TYPE>
-
-
+packages:
+  core: !include common/core.yaml # https://github.com/slimcdk/home-server/blob/master/services/esphome/common/core.yaml
+  basic_sensors: !include common/basic_sensors.yaml # https://github.com/slimcdk/home-server/blob/master/services/esphome/common/basic_sensors.yaml
+  
 
 light:
   - platform: neopixelbus

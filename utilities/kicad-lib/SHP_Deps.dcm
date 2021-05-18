@@ -5,6 +5,12 @@ D AS5601-ASOM
 F http://ams.com/documents/20143/36005/AS5601_DS000395_3-00.pdf
 $ENDCMP
 #
+$CMP BigTreeTech_TMC2209_V12
+D BigTreeTech Breakout board Board Stepper Driver TMC2209 V1.2
+K BigTreeTech Breakout board Board Stepper Driver TMC2209 V1.2
+F https://www.bigtree-tech.com/products/bigtreetech-tmc2209-v1-2-uart-stepper-motor-driver.html
+$ENDCMP
+#
 $CMP WS2812C-2020
 F http://www.world-semi.com/DownLoadFile/139
 $ENDCMP
