@@ -73,7 +73,7 @@ TODO: Graphics
 ## Software
 
 ### ESPHome
-ESPHome firmware config can be found [here](./firmwares/esphome.yaml)
+ESPHome firmware config can be found [here](./firmwares/esphome.yaml). \
 Light effects for clock visualizations and parallelization of LED strips are currently under development.
 
 
