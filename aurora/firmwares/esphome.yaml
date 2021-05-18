@@ -1,0 +1,42 @@
+substitutions:
+    hostid: aurora
+    hostname: Aurora
+    comment: Portable Aurora light pole
+    node_platform: esp8266
+    node_board: d1_mini
+    
+  
+  packages:
+    core: !include common/core.yaml # https://github.com/slimcdk/home-server/blob/master/services/esphome/common/core.yaml
+    basic_sensors: !include common/basic_sensors.yaml # https://github.com/slimcdk/home-server/blob/master/services/esphome/common/basic_sensors.yaml
+    
+  
+  esphome:
+    esp8266_restore_from_flash: true
+    on_boot:
+      - light.turn_on: ${hostid}
+  
+  
+  light:
+    - platform: neopixelbus
+      id: ${hostid}
+      name: ${hostname}
+      variant: SK6812
+      type: GRBW
+      method: ESP8266_DMA
+      num_leds: 30
+      pin: GPIO3
+      effects:
+        !include common/addressable_light_effects.yaml # https://github.com/slimcdk/home-server/blob/master/services/esphome/common/addressable_light_effects.yaml
+        
+  
+  binary_sensor:
+    - platform: gpio
+      id: ${hostid}_btn
+      name: ${hostname} Button
+      pin: D0
+      on_click:
+  #      min_length: 2000ms
+  #      #max_length: 3000ms
+        then:
+          - light.toggle: ${hostid}
