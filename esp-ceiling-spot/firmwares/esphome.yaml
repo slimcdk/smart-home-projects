@@ -1,0 +1,24 @@
+
+esphome:
+  name: esp-spot-light
+  platform: ESP32
+  board: <BOARD_TYPE>
+
+
+
+light:
+  - platform: neopixelbus
+    name: RGB RING
+    variant: WS2812B
+    type: GRB
+    method: ESP8266_DMA
+    num_leds: 12
+    pin: GPIO16
+
+  - platform: neopixelbus
+    name: RGB SPOT
+    variant: WS2812B
+    type: GRB
+    method: ESP8266_DMA
+    num_leds: 40
+    pin: GPIO17
